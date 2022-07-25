@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+  db:
+    image: harshagr63/postgres_filebeat:latest
+    restart: always
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pgdata
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=myprojectuser
+      - POSTGRES_DB=myproject
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - docker-elk_elk
+    # command: ["postgres", "-c", "log_statement=all"]
+  backend:
+    image: harshagr63/task1_main:filebeat
+    restart: always
+    expose:
+      - 8000
+    depends_on: 
+        - db
+    env_file: 
+      - ./.env
+    volumes: 
+      - static_files:/app/todoapp/staticfiles
+    networks:
+      - docker-elk_elk
+    command: sleep 24h
+
+  nginx: 
+    image: harshagr63/custom_filebeat_nginx:latest
+    restart: always
+    ports:
+        - 37831:80
+        #- 5044:5044
+    volumes:
+      - static_files:/app/todoapp/staticfiles
+    depends_on: 
+        - backend
+    networks:
+      - docker-elk_elk
+  
+
+#   certbot:
+#     image: certbot/certbot:latest
+#     restart: unless-stopped
+#     volumes:
+#         - certbot_conf:/etc/letsencrypt
+#         - certbot_www:/var/www/certbot
+#     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"      
+
+networks:
+  docker-elk_elk:
+    external: # to use existing network, we have to use external type
+      name: docker-elk_elk # name of existing network
+volumes:
+  static_files: {}
+  pg_data: {}
+  certbot_conf: {}
+  certbot_www: {}

@@ -1,0 +1,408 @@
+db_1       | The files belonging to this database system will be owned by user "postgres".
+db_1       | This user must also own the server process.
+db_1       | 
+db_1       | The database cluster will be initialized with locale "en_US.utf8".
+db_1       | The default database encoding has accordingly been set to "UTF8".
+db_1       | The default text search configuration will be set to "english".
+db_1       | 
+db_1       | Data page checksums are disabled.
+db_1       | 
+db_1       | fixing permissions on existing directory /var/lib/postgresql/data/pgdata ... ok
+db_1       | creating subdirectories ... ok
+db_1       | selecting dynamic shared memory implementation ... posix
+db_1       | selecting default max_connections ... 100
+db_1       | selecting default shared_buffers ... 128MB
+db_1       | selecting default time zone ... Etc/UTC
+db_1       | creating configuration files ... ok
+db_1       | running bootstrap script ... ok
+db_1       | performing post-bootstrap initialization ... ok
+db_1       | initdb: warning: enabling "trust" authentication for local connections
+db_1       | You can change this by editing pg_hba.conf or using the option -A, or
+db_1       | --auth-local and --auth-host, the next time you run initdb.
+db_1       | syncing data to disk ... ok
+db_1       | 
+db_1       | 
+db_1       | Success. You can now start the database server using:
+db_1       | 
+db_1       |     pg_ctl -D /var/lib/postgresql/data/pgdata -l logfile start
+db_1       | 
+db_1       | waiting for server to start....2022-03-16 09:36:01.507 UTC [51] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-16 09:36:01.509 UTC [51] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-16 09:36:01.529 UTC [52] LOG:  database system was shut down at 2022-03-16 09:36:01 UTC
+db_1       | 2022-03-16 09:36:01.533 UTC [51] LOG:  database system is ready to accept connections
+db_1       |  done
+db_1       | server started
+db_1       | CREATE DATABASE
+db_1       | 
+db_1       | 
+db_1       | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1       | 
+db_1       | 2022-03-16 09:36:01.825 UTC [51] LOG:  received fast shutdown request
+db_1       | waiting for server to shut down....2022-03-16 09:36:01.826 UTC [51] LOG:  aborting any active transactions
+db_1       | 2022-03-16 09:36:01.829 UTC [51] LOG:  background worker "logical replication launcher" (PID 58) exited with exit code 1
+db_1       | 2022-03-16 09:36:01.829 UTC [53] LOG:  shutting down
+db_1       | 2022-03-16 09:36:01.842 UTC [51] LOG:  database system is shut down
+db_1       |  done
+db_1       | server stopped
+db_1       | 
+db_1       | PostgreSQL init process complete; ready for start up.
+nginx_1    | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1    | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx_1    | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx_1    | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx_1    | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: using the "epoll" event method
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: nginx/1.20.2
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: OS: Linux 5.4.0-42-generic
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: start worker processes
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: start worker process 32
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: start worker process 33
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: start worker process 34
+nginx_1    | 2022/03/17 13:56:29 [notice] 1#1: start worker process 35
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET / HTTP/1.1" 200 1970 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 121200 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /static/todos/css/style.css HTTP/1.1" 200 2007 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /static/jquery-3.2.1.min.js HTTP/1.1" 200 86659 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /static/axios.min.js HTTP/1.1" 200 34714 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /static/todos/js/todo.js HTTP/1.1" 200 2703 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 172.19.0.1 - - [17/Mar/2022:13:57:15 +0000] "GET /favicon.ico HTTP/1.1" 404 4090 "http://localhost:37831/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:98.0) Gecko/20100101 Firefox/98.0" "-"
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+nginx_1    | 2022/03/17 14:01:15 [notice] 32#32: gracefully shutting down
+nginx_1    | 2022/03/17 14:01:15 [notice] 33#33: gracefully shutting down
+nginx_1    | 2022/03/17 14:01:15 [notice] 32#32: exiting
+nginx_1    | 2022/03/17 14:01:15 [notice] 33#33: exiting
+nginx_1    | 2022/03/17 14:01:15 [notice] 32#32: exit
+nginx_1    | 2022/03/17 14:01:15 [notice] 33#33: exit
+nginx_1    | 2022/03/17 14:01:15 [notice] 35#35: gracefully shutting down
+nginx_1    | 2022/03/17 14:01:15 [notice] 35#35: exiting
+nginx_1    | 2022/03/17 14:01:15 [notice] 34#34: gracefully shutting down
+nginx_1    | 2022/03/17 14:01:15 [notice] 34#34: exiting
+nginx_1    | 2022/03/17 14:01:15 [notice] 35#35: exit
+nginx_1    | 2022/03/17 14:01:15 [notice] 34#34: exit
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: worker process 32 exited with code 0
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: signal 29 (SIGIO) received
+db_1       | 
+db_1       | 2022-03-16 09:36:01.963 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-16 09:36:01.963 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-16 09:36:01.964 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-16 09:36:01.971 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-16 09:36:02.001 UTC [79] LOG:  database system was shut down at 2022-03-16 09:36:01 UTC
+db_1       | 2022-03-16 09:36:02.014 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-16 10:32:32.258 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-16 10:32:32.259 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-16 10:32:32.261 UTC [1] LOG:  background worker "logical replication launcher" (PID 85) exited with exit code 1
+db_1       | 2022-03-16 10:32:32.262 UTC [80] LOG:  shutting down
+db_1       | 2022-03-16 10:32:32.275 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-16 10:32:44.292 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-16 10:32:44.303 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-16 10:32:44.303 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-16 10:32:44.305 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-16 10:32:44.324 UTC [26] LOG:  database system was shut down at 2022-03-16 10:32:32 UTC
+db_1       | 2022-03-16 10:32:44.330 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-16 10:35:57.742 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-16 10:35:57.744 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-16 10:35:57.747 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+db_1       | 2022-03-16 10:35:57.748 UTC [27] LOG:  shutting down
+db_1       | 2022-03-16 10:35:57.762 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-17 13:42:56.909 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-17 13:42:56.910 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-17 13:42:56.910 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: worker process 34 exited with code 0
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: worker process 33 exited with code 0
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: worker process 35 exited with code 0
+nginx_1    | 2022/03/17 14:01:15 [notice] 1#1: exit
+nginx_1    | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+nginx_1    | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+nginx_1    | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+nginx_1    | 10-listen-on-ipv6-by-default.sh: info: /etc/nginx/conf.d/default.conf differs from the packaged version
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+nginx_1    | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+nginx_1    | /docker-entrypoint.sh: Configuration complete; ready for start up
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: using the "epoll" event method
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: nginx/1.20.2
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: built by gcc 10.3.1 20210424 (Alpine 10.3.1_git20210424) 
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: OS: Linux 5.13.0-35-generic
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: start worker processes
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: start worker process 31
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: start worker process 32
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: start worker process 33
+nginx_1    | 2022/03/25 06:32:21 [notice] 1#1: start worker process 34
+db_1       | 2022-03-17 13:42:56.912 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-17 13:42:56.932 UTC [28] LOG:  database system was shut down at 2022-03-16 10:35:57 UTC
+db_1       | 2022-03-17 13:42:56.946 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-17 13:43:36.453 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-17 13:43:36.454 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-17 13:43:36.456 UTC [1] LOG:  background worker "logical replication launcher" (PID 34) exited with exit code 1
+db_1       | 2022-03-17 13:43:36.457 UTC [29] LOG:  shutting down
+db_1       | 2022-03-17 13:43:36.469 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-17 13:45:45.929 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-17 13:45:45.929 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-17 13:45:45.929 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-17 13:45:45.933 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-17 13:45:45.968 UTC [26] LOG:  database system was shut down at 2022-03-17 13:43:36 UTC
+db_1       | 2022-03-17 13:45:45.977 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-17 13:46:14.595 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-17 13:46:14.596 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-17 13:46:14.599 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+db_1       | 2022-03-17 13:46:14.599 UTC [27] LOG:  shutting down
+db_1       | 2022-03-17 13:46:14.613 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-17 13:51:48.021 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-17 13:51:48.021 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-17 13:51:48.021 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-17 13:51:48.024 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-17 13:51:48.049 UTC [32] LOG:  database system was shut down at 2022-03-17 13:46:14 UTC
+db_1       | 2022-03-17 13:51:48.056 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-17 13:52:07.460 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-17 13:52:07.461 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-17 13:52:07.463 UTC [1] LOG:  background worker "logical replication launcher" (PID 38) exited with exit code 1
+db_1       | 2022-03-17 13:52:07.464 UTC [33] LOG:  shutting down
+db_1       | 2022-03-17 13:52:07.477 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-17 13:52:31.177 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-17 13:52:31.178 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-17 13:52:31.179 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-17 13:52:31.181 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-17 13:52:31.211 UTC [26] LOG:  database system was shut down at 2022-03-17 13:52:07 UTC
+db_1       | 2022-03-17 13:52:31.220 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-17 13:53:03.344 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-17 13:53:03.345 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-17 13:53:03.347 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+db_1       | 2022-03-17 13:53:03.348 UTC [27] LOG:  shutting down
+db_1       | 2022-03-17 13:53:03.361 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-17 13:56:28.772 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-17 13:56:28.772 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-17 13:56:28.772 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-17 13:56:28.775 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-17 13:56:28.808 UTC [26] LOG:  database system was shut down at 2022-03-17 13:53:03 UTC
+db_1       | 2022-03-17 13:56:28.816 UTC [1] LOG:  database system is ready to accept connections
+db_1       | 2022-03-17 14:01:26.480 UTC [1] LOG:  received fast shutdown request
+db_1       | 2022-03-17 14:01:26.481 UTC [1] LOG:  aborting any active transactions
+db_1       | 2022-03-17 14:01:26.483 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+db_1       | 2022-03-17 14:01:26.487 UTC [27] LOG:  shutting down
+db_1       | 2022-03-17 14:01:26.501 UTC [1] LOG:  database system is shut down
+db_1       | 
+db_1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1       | 
+db_1       | 2022-03-25 06:32:21.605 UTC [1] LOG:  starting PostgreSQL 12.10 (Debian 12.10-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+db_1       | 2022-03-25 06:32:21.606 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1       | 2022-03-25 06:32:21.606 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1       | 2022-03-25 06:32:21.608 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1       | 2022-03-25 06:32:21.644 UTC [27] LOG:  database system was shut down at 2022-03-17 14:01:26 UTC
+db_1       | 2022-03-25 06:32:21.666 UTC [1] LOG:  database system is ready to accept connections
+backend_1  | Operations to perform:
+backend_1  |   Apply all migrations: admin, auth, contenttypes, sessions, todos
+backend_1  | Running migrations:
+backend_1  |   No migrations to apply.
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-calendar.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/inline-delete.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/tooltag-arrowright.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/search.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/selector-icons.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-alert.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-addlink.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/calendar-icons.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-deletelink.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/README.txt'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-changelink.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-clock.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-unknown.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/sorting-icons.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-no.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-unknown-alt.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/LICENSE'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/tooltag-add.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/icon-yes.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/gis/move_vertex_on.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/img/gis/move_vertex_off.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/fonts/LICENSE.txt'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/fonts/README.txt'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Light-webfont.woff'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Bold-webfont.woff'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/fonts/Roboto-Regular-webfont.woff'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/prepopulate.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/jquery.init.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/prepopulate.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/SelectFilter2.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/urlify.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/actions.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/calendar.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/prepopulate_init.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/collapse.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/inlines.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/cancel.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/inlines.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/popup_response.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/SelectBox.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/timeparse.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/core.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/collapse.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/actions.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/change_form.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/admin/RelatedObjectLookups.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/admin/DateTimeShortcuts.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/xregexp/xregexp.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/LICENSE-JQUERY.txt'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/fonts.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/login.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/widgets.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/dashboard.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/changelists.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/rtl.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/base.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/django/contrib/admin/static/admin/css/forms.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/img/grid.png'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/img/glyphicons-halflings.png'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/img/glyphicons-halflings-white.png'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/glyphicons-halflings-regular.eot'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/glyphicons-halflings-regular.woff'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/fontawesome-webfont.woff'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/glyphicons-halflings-regular.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/glyphicons-halflings-regular.ttf'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/glyphicons-halflings-regular.woff2'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/fontawesome-webfont.svg'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/fontawesome-webfont.ttf'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/fonts/fontawesome-webfont.eot'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/jquery-3.3.1.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/bootstrap.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/default.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/coreapi-0.1.1.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/csrf.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/bootstrap.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/ajax-form.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/js/prettify-min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/img/grid.png'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/img/favicon.ico'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/js/api.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/js/jquery.json-view.min.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/js/highlight.pack.js'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/css/jquery.json-view.min.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/css/highlight.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/docs/css/base.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/bootstrap-theme.min.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/default.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/bootstrap-theme.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/bootstrap.min.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/font-awesome-4.0.3.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/bootstrap-tweaks.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/bootstrap.css'
+backend_1  | Copying '/usr/local/lib/python3.8/site-packages/rest_framework/static/rest_framework/css/prettify.css'
+backend_1  | Found another file with the destination path 'jquery-3.2.1.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'axios.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/fonts/glyphicons-halflings-regular.eot'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/fonts/glyphicons-halflings-regular.woff'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/fonts/glyphicons-halflings-regular.svg'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/fonts/glyphicons-halflings-regular.ttf'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/fonts/glyphicons-halflings-regular.woff2'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/js/bootstrap.min.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/js/npm.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/js/bootstrap.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap-theme.min.css'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap.min.css.map'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap-theme.css'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap-theme.min.css.map'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap.min.css'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap.css.map'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap.css'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'bootstrap/css/bootstrap-theme.css.map'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'todos/js/todo.js'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Found another file with the destination path 'todos/css/style.css'. It will be ignored since only the first encountered file is collected. If this is not what you want, make sure every static file has a unique path.
+backend_1  | Post-processed 'rest_framework/docs/css/jquery.json-view.min.css' as 'rest_framework/docs/css/jquery.json-view.min.a2e6beeb6710.css'
+backend_1  | Post-processed 'rest_framework/docs/css/highlight.css' as 'rest_framework/docs/css/highlight.e0e4d973c6d7.css'
+backend_1  | Post-processed 'rest_framework/docs/css/base.css' as 'rest_framework/docs/css/base.d9cd17260641.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap-theme.min.css' as 'bootstrap/css/bootstrap-theme.min.ab6b02efeaf1.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap-theme.css' as 'bootstrap/css/bootstrap-theme.b9b46bcc4dad.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap.min.css' as 'bootstrap/css/bootstrap.min.5c7070ef655a.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap.css' as 'bootstrap/css/bootstrap.e7aa4e830a64.css'
+backend_1  | Post-processed 'todos/css/style.css' as 'todos/css/style.2dd861148567.css'
+backend_1  | Post-processed 'admin/css/fonts.css' as 'admin/css/fonts.494e4ec545c9.css'
+backend_1  | Post-processed 'admin/css/login.css' as 'admin/css/login.a846c0e2ef65.css'
+backend_1  | Post-processed 'admin/css/widgets.css' as 'admin/css/widgets.5e372b41c483.css'
+backend_1  | Post-processed 'admin/css/dashboard.css' as 'admin/css/dashboard.7ac78187c567.css'
+backend_1  | Post-processed 'admin/css/changelists.css' as 'admin/css/changelists.f6dc691f8d62.css'
+backend_1  | Post-processed 'admin/css/rtl.css' as 'admin/css/rtl.4c867197b256.css'
+backend_1  | Post-processed 'admin/css/base.css' as 'admin/css/base.6b517d0d5813.css'
+backend_1  | Post-processed 'admin/css/forms.css' as 'admin/css/forms.2003a066ae02.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-theme.min.css' as 'rest_framework/css/bootstrap-theme.min.66b84a04375e.css'
+backend_1  | Post-processed 'rest_framework/css/default.css' as 'rest_framework/css/default.8d5591a6aabc.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-theme.css' as 'rest_framework/css/bootstrap-theme.a279820bbeb5.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap.min.css' as 'rest_framework/css/bootstrap.min.77017a69879a.css'
+backend_1  | Post-processed 'rest_framework/css/font-awesome-4.0.3.css' as 'rest_framework/css/font-awesome-4.0.3.c1e1ea213abf.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-tweaks.css' as 'rest_framework/css/bootstrap-tweaks.46ed116b0edd.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap.css' as 'rest_framework/css/bootstrap.23773f1bb199.css'
+backend_1  | Post-processed 'rest_framework/css/prettify.css' as 'rest_framework/css/prettify.a987f72342ee.css'
+backend_1  | Post-processed 'rest_framework/docs/css/jquery.json-view.min.css' as 'rest_framework/docs/css/jquery.json-view.min.a2e6beeb6710.css'
+backend_1  | Post-processed 'rest_framework/docs/css/highlight.css' as 'rest_framework/docs/css/highlight.e0e4d973c6d7.css'
+backend_1  | Post-processed 'rest_framework/docs/css/base.css' as 'rest_framework/docs/css/base.d9cd17260641.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap-theme.min.css' as 'bootstrap/css/bootstrap-theme.min.ab6b02efeaf1.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap-theme.css' as 'bootstrap/css/bootstrap-theme.b9b46bcc4dad.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap.min.css' as 'bootstrap/css/bootstrap.min.5c7070ef655a.css'
+backend_1  | Post-processed 'bootstrap/css/bootstrap.css' as 'bootstrap/css/bootstrap.e7aa4e830a64.css'
+backend_1  | Post-processed 'todos/css/style.css' as 'todos/css/style.2dd861148567.css'
+backend_1  | Post-processed 'admin/css/fonts.css' as 'admin/css/fonts.494e4ec545c9.css'
+backend_1  | Post-processed 'admin/css/login.css' as 'admin/css/login.a846c0e2ef65.css'
+backend_1  | Post-processed 'admin/css/widgets.css' as 'admin/css/widgets.5e372b41c483.css'
+backend_1  | Post-processed 'admin/css/dashboard.css' as 'admin/css/dashboard.7ac78187c567.css'
+backend_1  | Post-processed 'admin/css/changelists.css' as 'admin/css/changelists.f6dc691f8d62.css'
+backend_1  | Post-processed 'admin/css/rtl.css' as 'admin/css/rtl.4c867197b256.css'
+backend_1  | Post-processed 'admin/css/base.css' as 'admin/css/base.6b517d0d5813.css'
+backend_1  | Post-processed 'admin/css/forms.css' as 'admin/css/forms.2003a066ae02.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-theme.min.css' as 'rest_framework/css/bootstrap-theme.min.66b84a04375e.css'
+backend_1  | Post-processed 'rest_framework/css/default.css' as 'rest_framework/css/default.8d5591a6aabc.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-theme.css' as 'rest_framework/css/bootstrap-theme.a279820bbeb5.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap.min.css' as 'rest_framework/css/bootstrap.min.77017a69879a.css'
+backend_1  | Post-processed 'rest_framework/css/font-awesome-4.0.3.css' as 'rest_framework/css/font-awesome-4.0.3.c1e1ea213abf.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap-tweaks.css' as 'rest_framework/css/bootstrap-tweaks.46ed116b0edd.css'
+backend_1  | Post-processed 'rest_framework/css/bootstrap.css' as 'rest_framework/css/bootstrap.23773f1bb199.css'
+backend_1  | Post-processed 'rest_framework/css/prettify.css' as 'rest_framework/css/prettify.a987f72342ee.css'
+backend_1  | 
+backend_1  | 97 static files copied to '/app/todoapp/staticfiles', 20 unmodified, 48 post-processed.
+backend_1  | [2022-04-04 09:26:26 +0000] [11] [INFO] Starting gunicorn 19.7.1
+backend_1  | [2022-04-04 09:26:26 +0000] [11] [INFO] Listening at: http://0.0.0.0:8000 (11)
+backend_1  | [2022-04-04 09:26:26 +0000] [11] [INFO] Using worker: sync
+backend_1  | /usr/local/lib/python3.8/os.py:1023: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+backend_1  |   return io.open(fd, *args, **kwargs)
+backend_1  | [2022-04-04 09:26:26 +0000] [13] [INFO] Booting worker with pid: 13
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET / HTTP/1.1" 200 1970 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 121200 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /static/todos/css/style.css HTTP/1.1" 200 2007 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /static/axios.min.js HTTP/1.1" 200 34714 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /static/jquery-3.2.1.min.js HTTP/1.1" 200 86659 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /static/todos/js/todo.js HTTP/1.1" 200 2703 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+backend_1  | Not Found: /favicon.ico
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:18 +0000] "GET /favicon.ico HTTP/1.1" 404 4090 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:21 +0000] "GET /signup HTTP/1.1" 200 3253 "http://localhost:37831/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:46 +0000] "POST /signup/submit HTTP/1.1" 302 0 "http://localhost:37831/signup" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+backend_1  | The login page
+nginx_1    | 172.19.0.1 - - [04/Apr/2022:09:27:46 +0000] "GET /login HTTP/1.1" 200 2834 "http://localhost:37831/signup" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" "-"
+
+

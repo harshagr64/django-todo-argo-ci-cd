@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: django-todo-cd
+  namespace: argocd
+spec:
+  project: default
+
+
+  source:
+    repoURL: https://bitbucket.org/harshagr63/django-todo-k8s-deployment/src/master/
+    targetRevision: HEAD
+    path: django-todoapp-master/k8s-deployment-task
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: django-todo-ns
+  
+  syncPolicy:
+    automated:
+      selfHeal: false
+      prune: true

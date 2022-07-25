@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: github-event-source
+spec:
+  service:
+    ports:
+      - name: example
+        port: 12000
+        targetPort: 12000
+  github:
+    example:
+      repositories:
+        - owner: harshagr64
+          names:
+            - argo-events
+            - argo-workflows
+      # Github will send events to following port and endpoint
+      webhook:
+        # endpoint to listen to events on
+        endpoint: /push
+        # port to run internal HTTP server on
+        port: "12000"
+        # HTTP request method to allow. In this case, only POST requests are accepted
+        method: POST
+        url: http://url-that-is-reachable-from-GitHub
+      events:
+        - "*"
+
+      # apiToken refers to K8s secret that stores the github api token
+      # if apiToken is provided controller will create webhook on GitHub repo
+      # +optional
+      apiToken:
+        name: github-access
+        key: token
+
+      insecure: true
+      # Determines if notifications are sent when the webhook is triggered
+      active: true
+      contentType: json

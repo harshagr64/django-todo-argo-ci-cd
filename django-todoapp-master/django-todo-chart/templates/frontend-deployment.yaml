@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-frontend-deployment
+  labels:
+    app: frontend
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: server
+          image: harshagr63/task1_nginx:k8sv2
+          resources: {}
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: staticfiles
+              mountPath: /app/todoapp/staticfiles
+      volumes:
+        - name: staticfiles
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-sf-pvc
+          
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31000
