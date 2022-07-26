@@ -10,10 +10,10 @@ spec:
     - name: github-es
       eventSourceName: github-es
       eventName: example
-      
+
   triggers:
     - template:
-        name: 
+        name: github-webhook-wf-trigger
         k8s:
           operation: create
           source:
