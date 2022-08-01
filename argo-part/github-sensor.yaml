@@ -4,7 +4,7 @@ metadata:
   name: github-sensor
   namespace: argo-events
 
-  
+
   
 spec:
   template:
@@ -48,6 +48,8 @@ spec:
                 dependencyName: github-es
                 dataKey: body
               dest: spec.arguments.parameters.0.value
+
+              
             
 
       
