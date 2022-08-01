@@ -30,7 +30,17 @@ spec:
                 name: special-trigger
               spec:
                 # serviceAccountName: operate-workflow-sa
-                entrypoint: whalesay-template
-                workflowTemplateRef:
-                  name: whalesay-template
-                  clusterScope: true
+                entrypoint: git-clone
+                templates:
+                  - name: git-clone
+                    inputs:
+                      artifacts:
+                        - name: django-todo
+                          path: django-todoapp-master/
+                          git:
+                            repo: https://github.com/harshagr64/django-todo-argo-ci-cd
+                    container:
+                    image: golang:1.10
+                    command: [sh, -c]
+                    args: ["git status && ls && cat VERSION"]
+                    workingDir: django-todoapp-master/
