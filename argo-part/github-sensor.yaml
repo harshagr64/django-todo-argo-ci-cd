@@ -15,32 +15,23 @@ spec:
   triggers:
     - template:
         name: github-webhook-wf-trigger
-        k8s:
-          operation: create
+        argoWorkflow:
+          # https://github.com/argoproj/argo-events/blob/master/api/sensor.md#argoproj.io/v1alpha1.ArgoWorkflowTrigger
+          group: argoproj.io
+          version: v1alpha1
+          resource: Workflow
+          operation: submit
+          metadata:
+            name: github-workflow-sensor 
           source:
             resource:
               apiVersion: argoproj.io/v1alpha1
               kind: Workflow
               metadata:
-                name: github-ci-wf # name of this workflow
-
+                name: special-trigger
               spec:
-                entrypoint: git-clone
-                templates:
-                  - name: git-clone
-                    inputs:
-                      artifacts:
-                        - name: django-todo
-                          path: django-todoapp-master/
-                          git:
-                            repo: https://github.com/harshagr64/django-todo-argo-ci-cd
-                    container:
-                    image: golang:1.10
-                    command: [sh, -c]
-                    args: ["git status && ls && cat VERSION"]
-                    workingDir: django-todoapp-master/
-          parameters:
-            - src:
-                dependencyName: github-es
-                dataKey: body
-              dest: spec.arguments.parameters.0.value
+                # serviceAccountName: operate-workflow-sa
+                entrypoint: whalesay-template
+                workflowTemplateRef:
+                  name: whalesay-template
+                  clusterScope: true
