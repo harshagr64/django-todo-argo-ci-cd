@@ -9,6 +9,7 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
+        
   github:
     example: # event name
       repositories:
