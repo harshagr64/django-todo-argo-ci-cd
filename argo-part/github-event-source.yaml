@@ -22,7 +22,7 @@ spec:
         port: "12000"
         # HTTP request method to allow. In this case, only POST requests are accepted
         method: POST
-        url: https://e662-202-160-167-98.in.ngrok.io
+        url: https://ae4f-202-160-167-98.in.ngrok.io
       events:
         - "*"
 
