@@ -5,6 +5,7 @@ metadata:
   namespace: argo-events
   
 spec:
+  
   template:
   dependencies:
     - name: github-es
@@ -12,7 +13,9 @@ spec:
       eventName: example
 
   triggers:
+
     - template:
+        serviceAccountName: operate-workflow-sa
         name: github-webhook-wf-trigger
         k8s:
           operation: create
@@ -45,5 +48,5 @@ spec:
                 dataKey: body
               dest: spec.arguments.parameters.0.value
 
-              
+
       
