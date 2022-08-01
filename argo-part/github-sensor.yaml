@@ -22,23 +22,23 @@ spec:
               apiVersion: argoproj.io/v1alpha1
               kind: Workflow
               metadata:
-                generateName: github-es-
+                name: github-ci-wf # name of this workflow
+
               spec:
-                entrypoint: whalesay
-                arguments:
-                  parameters:
-                  - name: message
-                    # the value will get overridden by event payload from test-dep
-                    value: hello world
+                entrypoint: git-clone
                 templates:
-                - name: whalesay
-                  inputs:
-                    parameters:
-                    - name: message
-                  container:
-                    image: docker/whalesay:latest
-                    command: [cowsay]
-                    args: ["{{inputs.parameters.message}}"]
+                  - name: git-clone
+                    inputs:
+                      artifacts:
+                        - name: django-todo
+                          path: django-todoapp-master/
+                          git:
+                            repo: https://github.com/harshagr64/django-todo-argo-ci-cd
+                    container:
+                    image: golang:1.10
+                    command: [sh, -c]
+                    args: ["git status && ls && cat VERSION"]
+                    workingDir: django-todoapp-master/
           parameters:
             - src:
                 dependencyName: github-es
