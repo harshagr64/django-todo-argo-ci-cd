@@ -6,7 +6,6 @@ metadata:
   
 spec:
   template:
-    serviceAccountName: operate-workflow-sa
   dependencies:
     - name: github-es
       eventSourceName: github-es
