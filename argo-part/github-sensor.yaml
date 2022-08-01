@@ -26,7 +26,7 @@ spec:
               metadata:
                 name: special-trigger
               spec:
-                # serviceAccountName: operate-workflow-sa
+                serviceAccountName: operate-workflow-sa
                 entrypoint: git-clone
                 templates:
                   - name: git-clone
