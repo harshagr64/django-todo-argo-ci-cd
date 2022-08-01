@@ -3,6 +3,8 @@ kind: Sensor
 metadata:
   name: github-sensor
   namespace: argo-events
+
+  
   
 spec:
   template:
