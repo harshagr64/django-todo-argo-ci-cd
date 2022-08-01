@@ -5,7 +5,6 @@ metadata:
   namespace: argo-events
   
 spec:
-  
   template:
   dependencies:
     - name: github-es
