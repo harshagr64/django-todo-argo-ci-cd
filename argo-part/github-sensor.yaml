@@ -12,6 +12,7 @@ spec:
       eventName: example
 
 
+
   triggers:
     - template:
         name: github-webhook-wf-trigger
