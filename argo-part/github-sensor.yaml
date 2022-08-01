@@ -11,6 +11,7 @@ spec:
       eventSourceName: github-es
       eventName: example
 
+
   triggers:
     - template:
         name: github-webhook-wf-trigger
