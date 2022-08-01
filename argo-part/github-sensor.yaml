@@ -15,14 +15,8 @@ spec:
   triggers:
     - template:
         name: github-webhook-wf-trigger
-        argoWorkflow:
-          # https://github.com/argoproj/argo-events/blob/master/api/sensor.md#argoproj.io/v1alpha1.ArgoWorkflowTrigger
-          group: argoproj.io
-          version: v1alpha1
-          resource: Workflow
-          operation: submit
-          metadata:
-            name: github-workflow-sensor 
+        k8s:
+          operation: create
           source:
             resource:
               apiVersion: argoproj.io/v1alpha1
@@ -36,10 +30,11 @@ spec:
                   - name: git-clone
                     inputs:
                       artifacts:
-                        - name: django-todo
-                          path: django-todoapp-master/
-                          git:
-                            repo: https://github.com/harshagr64/django-todo-argo-ci-cd
+                      - name: argo-source
+                        path: /src
+                        git:
+                          repo: https://github.com/argoproj/argo-workflows.git
+                          revision: "v2.1.1"
                     container:
                     image: golang:1.10
                     command: [sh, -c]
