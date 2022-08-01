@@ -38,7 +38,7 @@ spec:
                     image: golang:1.10
                     command: [sh, -c]
                     args: ["git status && ls && cat VERSION"]
-                    workingDir: django-todoapp-master/
+                    workingDir: /src
           parameters:
             - src:
                 dependencyName: github-es
