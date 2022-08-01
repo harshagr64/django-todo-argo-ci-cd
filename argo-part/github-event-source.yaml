@@ -9,7 +9,6 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
-        
   github:
     example: # event name
       repositories:
@@ -26,8 +25,6 @@ spec:
         url: https://ae4f-202-160-167-98.in.ngrok.io
       events:
         - "*"
-
-
 
       # apiToken refers to K8s secret that stores the github api token
       # if apiToken is provided controller will create webhook on GitHub repo
